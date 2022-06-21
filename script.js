@@ -1,4 +1,7 @@
 
+
+
+Calcbutton.addEventListener(function(e){
 function operate(a,op,b){
 
     op = eventbuttonpress.id
@@ -6,9 +9,7 @@ function operate(a,op,b){
     op.id(a,b);
 
 
-}
-
-
+}});
 
 
 

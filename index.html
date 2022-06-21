@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Basic Calculator</p>
+
+
+
+
+    <button id ='add'>+</button>
+    <button id ='subtract'>-</button>
+    <button id ='multiply'>*</button>
+    <button id = 'divide'>/</button>
+    <button id = 'power'>^</button>
+    <button id = 'factorial'>!</button>
+
+</body>
+
+<script>
+
+const buttons = document.querySelectorAll('button')
+
+
+buttons.forEach(function(button){
+    
+    button.addEventListener('click',function(e){
+function operate(a,op,b){
+
+    op = target.button[id];
+    console.log(op);
+
+}});
+
+const add = function(a, b) {
+	return a + b;
+};
+
+const subtract = function(a, ...b) {
+return a - b;
+}});
+
+const sum = function(...sum) {
+	summed = sum.reduce(totalSum);
+
+  function totalSum(total,currentValue){
+    return total + currentValue;
+  };
+  return summed;
+};
+
+const multiply = function(...mult) {
+  multiplied = mult.reduce(totalProd)
+
+  function totalProd(total,currentValue){
+    return total * currentValue;
+  }
+  return multiplied;
+};
+
+const power = function(a,b) {
+  c = a ** b;
+  return c;
+	
+};
+
+const factorial = function() {
+	
+};
+</script>
+</html>

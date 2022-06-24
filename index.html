@@ -7,17 +7,47 @@
     <title>Document</title>
 </head>
 <body>
+
     <p>Basic Calculator</p>
 
+  <div class ='display'>
+    
+  </div>
 
-
-
+  <div class = '1strow'>
+      <button id ='1'>1</button>
+    <button id ='2'>2</button>
+    <button id ='3'>3</button>  
     <button id ='add'>+</button>
+  </div>
+
+  <div class ='2ndrow'>
+    <button id = '4'>4</button>
+    <button id = '5'>5</button>
+    <button id = '6'>6</button>
     <button id ='subtract'>-</button>
-    <button id ='multiply'>*</button>
+
     <button id = 'divide'>/</button>
+
+  </div>
+
+  <div class ='3rdrow'>
+    <button id = '7'>7</button>
+    <button id = '8'>8</button>
+    <button id = '9'>9</button>
+    <button id ='multiply'>*</button>
+  </div>
+
+  <div class ='4throw'>
+    <button id = 'divide'>/</button>
+    <button id = '0'>0</button>
+    <button id = 'equal'>=</button>
+  </div>
+
+  <div class ='5throw'>
     <button id = 'power'>^</button>
     <button id = 'factorial'>!</button>
+  </div>
 
 </body>
 
@@ -27,14 +57,20 @@ const buttons = document.querySelectorAll('button')
 
 
 buttons.forEach(function(button){
-    
     button.addEventListener('click',function(e){
-function operate(a,op,b){
+      op = event.target.id;
+      console.log(op);
+      console.log(add(a,b));
 
-    op = target.button[id];
-    console.log(op);
 
-}});
+    })});
+
+
+    let operations = {
+      add: function(a, b) {
+	          return a + b;
+          }
+};
 
 const add = function(a, b) {
 	return a + b;
@@ -42,7 +78,7 @@ const add = function(a, b) {
 
 const subtract = function(a, ...b) {
 return a - b;
-}});
+};
 
 const sum = function(...sum) {
 	summed = sum.reduce(totalSum);

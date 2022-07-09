@@ -11,65 +11,120 @@
     <p>Basic Calculator</p>
 
   <div class ='display'>
-    
+    <p></p>
   </div>
 
   <div class = '1strow'>
-      <button id ='1'>1</button>
-    <button id ='2'>2</button>
-    <button id ='3'>3</button>  
-    <button id ='add'>+</button>
+      <button id ='1'class = 'num'>1</button>
+    <button id ='2'class = 'num'>2</button>
+    <button id ='3'class = 'num'>3</button>  
+    <button id ='add' class = 'oper'>+</button>
   </div>
 
   <div class ='2ndrow'>
-    <button id = '4'>4</button>
-    <button id = '5'>5</button>
-    <button id = '6'>6</button>
-    <button id ='subtract'>-</button>
-
-    <button id = 'divide'>/</button>
+    <button id = '4'class = 'num'>4</button>
+    <button id = '5'class = 'num'>5</button>
+    <button id = '6'class = 'num'>6</button>
+    <button id ='subtract' class = 'oper'>-</button>
 
   </div>
 
   <div class ='3rdrow'>
-    <button id = '7'>7</button>
-    <button id = '8'>8</button>
-    <button id = '9'>9</button>
-    <button id ='multiply'>*</button>
+    <button id = '7'class = 'num'>7</button>
+    <button id = '8'class = 'num'>8</button>
+    <button id = '9'class = 'num'>9</button>
+    <button id ='multiply' class = 'oper'>*</button>
   </div>
 
   <div class ='4throw'>
-    <button id = 'divide'>/</button>
-    <button id = '0'>0</button>
-    <button id = 'equal'>=</button>
+    <button id = 'divide' class = 'oper'>/</button>
+    <button id = '0'class = 'num'>0</button>
+    <button id = 'equal' class = 'oper'>=</button>
   </div>
 
   <div class ='5throw'>
-    <button id = 'power'>^</button>
-    <button id = 'factorial'>!</button>
+    <button id = 'power'class = 'oper'>^</button>
+    <button id = 'factorial'class = 'oper'>!</button>
+    <button id = 'clear' class = 'clear'>C</button>
   </div>
 
 </body>
 
 <script>
 
-const buttons = document.querySelectorAll('button')
+
+const a = 3
+const b = 4
 
 
-buttons.forEach(function(button){
-    button.addEventListener('click',function(e){
+const operbuttons = document.querySelectorAll('.oper');
+const equaldisp = document.querySelector('#equal');
+const display = document.querySelector('.display');
+const numbers = document.querySelectorAll('.num');
+const displayresult = document.createElement('div');
+const clearall = document.querySelector('#clear');
+displayresult.classList.add('displayresult');
+
+
+clearall.addEventListener('click', function(e){
+  display.innerText = '';
+
+});
+
+equaldisp.addEventListener('click', function(e,result){
+  display.innerText = result;
+})
+
+
+/*operbuttons.forEach(function(oper){
+oper.addEventListener('click', function(e){
+  display.innerText = display.innerText + event.target.innerText;
+}); WHY is display inner text undefined in equal function
+});*/
+
+numbers.forEach(function(button){
+  button.addEventListener('click', function(e){
+    display.innerText = display.innerText + event.target.id;
+  });
+});
+
+
+operbuttons.forEach(function(oper){
+    oper.addEventListener('click',function(e){
+      num1 = display.innerText;
+      console.log(num1);
+      display.innerText = '';
       op = event.target.id;
+      return num1;
+      return op;
+    });
+
+    equaldisp.addEventListener('click',function(e){
+      console.log(display.innerText);
+      num2 = display.innerText;
+      console.log(num1);
+      console.log(num2);
       console.log(op);
-      console.log(add(a,b));
+      console.log(operations[op](num1,num2));
+      result = operations[op](num1,num2);
+      return result;
 
 
-    })});
+    })
+
+    });
 
 
     let operations = {
       add: function(a, b) {
 	          return a + b;
-          }
+          },
+      multiply: function(a,b){
+          return a *b;
+          },
+      subtract: function(a, ...b) {
+            return a - b;
+      }
 };
 
 const add = function(a, b) {

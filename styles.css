@@ -1,0 +1,40 @@
+.container {
+    height: 340px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.num{
+    width: 50px;
+    height: 50px;
+}
+
+.oper{
+    width: 50px;
+    height: 50px;
+}
+
+.clear{
+    width: 50px;
+    height: 50px;
+}
+
+#equal{
+    width: 50px;
+    height: 50px;
+}
+
+.display {
+    width: 207px;
+    height: 30px;
+    border:2px solid black;
+    margin: 5px;
+    display:flex;
+    padding-right: 5px;
+    justify-content: end;
+    align-items: center;
+    border-radius: 5px;
+
+}

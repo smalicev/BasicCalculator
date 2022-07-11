@@ -4,24 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
 <body>
 
     <p>Basic Calculator</p>
 
+
+
+  <div class = 'container'>
   <div class ='display'>
     <p></p>
   </div>
 
-  <div class = '1strow'>
-      <button id ='1'class = 'num'>1</button>
-    <button id ='2'class = 'num'>2</button>
-    <button id ='3'class = 'num'>3</button>  
+  <div class = 'row'>
+      <button id ='7'class = 'num'>7</button>
+    <button id ='8'class = 'num'>8</button>
+    <button id ='9'class = 'num'>9</button>  
     <button id ='add' class = 'oper'>+</button>
   </div>
 
-  <div class ='2ndrow'>
+  <div class ='row'>
     <button id = '4'class = 'num'>4</button>
     <button id = '5'class = 'num'>5</button>
     <button id = '6'class = 'num'>6</button>
@@ -29,25 +33,25 @@
 
   </div>
 
-  <div class ='3rdrow'>
-    <button id = '7'class = 'num'>7</button>
-    <button id = '8'class = 'num'>8</button>
-    <button id = '9'class = 'num'>9</button>
+  <div class ='row'>
+    <button id = '1'class = 'num'>1</button>
+    <button id = '2'class = 'num'>2</button>
+    <button id = '3'class = 'num'>3</button>
     <button id ='multiply' class = 'oper'>*</button>
   </div>
 
-  <div class ='4throw'>
+  <div class ='row'>
     <button id = 'divide' class = 'oper'>/</button>
     <button id = '0'class = 'num'>0</button>
-    <button id = 'equal' class = 'oper'>=</button>
+    <button id = 'equal'>=</button>
   </div>
 
-  <div class ='5throw'>
+  <div class ='row'>
     <button id = 'power'class = 'oper'>^</button>
     <button id = 'factorial'class = 'oper'>!</button>
     <button id = 'clear' class = 'clear'>C</button>
   </div>
-
+</div>  
 </body>
 
 <script>
@@ -71,9 +75,9 @@ clearall.addEventListener('click', function(e){
 
 });
 
-equaldisp.addEventListener('click', function(e,result){
+/*equaldisp.addEventListener('click', function(e){
   display.innerText = result;
-})
+});*/
 
 
 /*operbuttons.forEach(function(oper){
@@ -97,43 +101,38 @@ operbuttons.forEach(function(oper){
       op = event.target.id;
       return num1;
       return op;
-    });
-
-    equaldisp.addEventListener('click',function(e){
-      console.log(display.innerText);
-      num2 = display.innerText;
-      console.log(num1);
-      console.log(num2);
-      console.log(op);
-      console.log(operations[op](num1,num2));
-      result = operations[op](num1,num2);
-      return result;
-
-
     })
-
-    });
-
+});
+   
+equaldisp.addEventListener('click',function(e){
+  console.log(display.innerText);
+  num2 = display.innerText;
+  console.log(num1);
+  console.log(num2);
+  console.log(op);
+  console.log(operations[op](+num1,+num2));
+  result = operations[op](+num1,+num2);
+  display.innerText = result;
+})
 
     let operations = {
       add: function(a, b) {
 	          return a + b;
           },
       multiply: function(a,b){
-          return a *b;
+          return a * b;
           },
       subtract: function(a, ...b) {
             return a - b;
-      }
+      },
+      power: function(a,b){
+        return a ** b;
+      },
+      divide: function (a,b){
+        return a / b;
+      },
 };
 
-const add = function(a, b) {
-	return a + b;
-};
-
-const subtract = function(a, ...b) {
-return a - b;
-};
 
 const sum = function(...sum) {
 	summed = sum.reduce(totalSum);
@@ -156,10 +155,6 @@ const multiply = function(...mult) {
 const power = function(a,b) {
   c = a ** b;
   return c;
-	
-};
-
-const factorial = function() {
 	
 };
 </script>

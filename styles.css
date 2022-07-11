@@ -30,12 +30,13 @@ button{
     box-shadow: -3px 3px orange, -2px 2px orange, -1px 1px orange;
     border: 1px solid orange;
     border-radius: 8px;
+
 }
 
 
 button:active{
     top: 4px;
-    box-shadow: 0 0 0 1px #163772 inset,0 0 0 2px rgba(255, 255, 255, 0.15) inset,0 0 0 0      #333797,0 0 0 1px rgba(0, 0, 0, 0.4),0 0px 8px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: -1.5px 1.5px #af9150 inset,0 0 0 2px rgba(250, 181, 181, 0.15) inset,0 0 0 0      #333797,0 0 0 1px rgba(0, 0, 0, 0.4),0 0px 2px 1px rgba(192, 173, 173, 0.5);
 }
 
 .num{
@@ -54,6 +55,7 @@ button:active{
     font-size: large;
     font-style:italic;
     color: gray;
+    background-color: rgb(255, 192, 147);
 }
 
 .clear{
@@ -62,6 +64,7 @@ button:active{
     font-size: large;
     font-style:italic;
     color: gray;
+    background-color: rgb(255, 192, 147);
 }
 
 #equal{
@@ -70,6 +73,7 @@ button:active{
     font-size: large;
     font-style:italic;
     color: gray;
+    background-color: rgb(255, 192, 147);
 }
 
 .display {

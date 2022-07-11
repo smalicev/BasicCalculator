@@ -1,40 +1,92 @@
-.container {
-    height: 340px;
+.layoutcontainer {
+    height: 600px;
     display:flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
 }
 
+.calccontainer{
+    height: 370px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 10px solid bisque;
+    box-shadow: -6px 6px orange, -4px 4px orange, -2px 2px orange;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: whitesmoke;
+}
+
+p{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
+}
+button{
+    background-color: papayawhip;
+    border: 3px solid bisque;
+    color: #333;
+    box-shadow: -3px 3px orange, -2px 2px orange, -1px 1px orange;
+    border: 1px solid orange;
+    border-radius: 8px;
+}
+
+
+button:active{
+    top: 4px;
+    box-shadow: 0 0 0 1px #163772 inset,0 0 0 2px rgba(255, 255, 255, 0.15) inset,0 0 0 0      #333797,0 0 0 1px rgba(0, 0, 0, 0.4),0 0px 8px 1px rgba(0, 0, 0, 0.5);
+}
+
 .num{
     width: 50px;
     height: 50px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
+    font-style:italic;
+    color: gray;
+
 }
 
 .oper{
     width: 50px;
     height: 50px;
+    font-size: large;
+    font-style:italic;
+    color: gray;
 }
 
 .clear{
     width: 50px;
     height: 50px;
+    font-size: large;
+    font-style:italic;
+    color: gray;
 }
 
 #equal{
     width: 50px;
     height: 50px;
+    font-size: large;
+    font-style:italic;
+    color: gray;
 }
 
 .display {
     width: 207px;
-    height: 30px;
-    border:2px solid black;
+    height: 50px;
     margin: 5px;
     display:flex;
     padding-right: 5px;
     justify-content: end;
     align-items: center;
     border-radius: 5px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-shadow: -3px 3px orange, -2px 2px orange, -1px 1px orange, -3px 3px orange;
+    border: 3px solid bisque;
+    font-size: x-large;
+    background-color:wheat;
+    font-style:italic;
+    color: gray;
 
 }

@@ -75,6 +75,10 @@ displayresult.classList.add('displayresult');
 
 clearall.addEventListener('click', function(e){
   display.innerText = '';
+  num1 =null;
+  num2 =null;
+  console.log(num1);
+  console.log(num2);
 
 });
 
@@ -103,7 +107,6 @@ operbuttons.forEach(function(oper){
       display.innerText = '';
       op = event.target.id;
       return num1;
-      return op;
     })
 });
    
@@ -133,6 +136,12 @@ equaldisp.addEventListener('click',function(e){
       },
       divide: function (a,b){
         return a / b;
+      },
+      factorial: function (a){
+        let rval=1;
+        for (var i = 2; i <= a; i++)
+                rval = rval * i;
+        return rval
       },
 };
 

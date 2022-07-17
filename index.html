@@ -12,7 +12,7 @@
     
 
   <div class = 'layoutcontainer'>
-    <p>Srdjan Malicevic's Basic Calculator</p>
+    <p>Serge's Basic Calculator</p>
     <p>For the Odin Project</p>
 
  
@@ -72,6 +72,7 @@ const displayresult = document.createElement('div');
 const clearall = document.querySelector('#clear');
 displayresult.classList.add('displayresult');
 
+num1=null;
 
 clearall.addEventListener('click', function(e){
   display.innerText = '';
@@ -82,17 +83,6 @@ clearall.addEventListener('click', function(e){
 
 });
 
-/*equaldisp.addEventListener('click', function(e){
-  display.innerText = result;
-});*/
-
-
-/*operbuttons.forEach(function(oper){
-oper.addEventListener('click', function(e){
-  display.innerText = display.innerText + event.target.innerText;
-}); WHY is display inner text undefined in equal function
-});*/
-
 numbers.forEach(function(button){
   button.addEventListener('click', function(e){
     display.innerText = display.innerText + event.target.id;
@@ -102,14 +92,26 @@ numbers.forEach(function(button){
 
 operbuttons.forEach(function(oper){
     oper.addEventListener('click',function(e){
+      if (num1 == null){
       num1 = display.innerText;
       console.log(num1);
       display.innerText = '';
       op = event.target.id;
-      return num1;
-    })
-});
-   
+      } else{
+      num2 = display.innerText;
+      result = operations[op](+num1,+num2);
+      display.innerText = result;
+      num1 = result;
+      op = event.target.id;
+      numbers.forEach(function(button){
+        button.addEventListener('click', function(e){
+        display.innerText = ''
+        display.innerText = display.innerText + event.target.id;
+        });
+      })};
+    });
+  });
+
 equaldisp.addEventListener('click',function(e){
   console.log(display.innerText);
   num2 = display.innerText;
@@ -143,31 +145,6 @@ equaldisp.addEventListener('click',function(e){
                 rval = rval * i;
         return rval
       },
-};
-
-
-const sum = function(...sum) {
-	summed = sum.reduce(totalSum);
-
-  function totalSum(total,currentValue){
-    return total + currentValue;
-  };
-  return summed;
-};
-
-const multiply = function(...mult) {
-  multiplied = mult.reduce(totalProd)
-
-  function totalProd(total,currentValue){
-    return total * currentValue;
-  }
-  return multiplied;
-};
-
-const power = function(a,b) {
-  c = a ** b;
-  return c;
-	
 };
 </script>
 </html>

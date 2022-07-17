@@ -81,6 +81,7 @@ button:active{
     height: 50px;
     margin: 5px;
     display:flex;
+    flex-wrap: wrap;
     padding-right: 5px;
     justify-content: end;
     align-items: center;

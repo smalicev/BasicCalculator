@@ -137,7 +137,11 @@ equaldisp.addEventListener('click',function(e){
         return a ** b;
       },
       divide: function (a,b){
+        if (b==0){
+        return "This calculation is impossible."
+        }else {
         return a / b;
+        }
       },
       factorial: function (a){
         let rval=1;
